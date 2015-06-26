@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+  font-size: 10px;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+header{
+  display: block;
+  color: black;
+  background-color: white;
+  top: 0px;
+  position: fixed;
+  z-index: 100;
+  width: 100%;r
+}
+
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+
+h1 {
+  margin: .67em 0;
+  font-size: 2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 0px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: 0;
+    text-decoration: none;
+}
+
+a {
+    color: black;
+}
+
+a:hover,
+a:focus,
+a:active,
+a.active {
+    color: black;
+}
+
+
+div{
+  display: block;
+}
+
+.break{
+  clear:both;
+}
+
+.brand{
+  margin-left: 1%;
+  float: left;
+
+}
+
+
+#back-to-present{
+  margin-right: 1%;
+  float: right;
+
+}
+
+.nombre-dias{
+  margin-left: 1.5%;
+
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+  width: 100%;
+}
+.col-xs-2 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 14.2857143%;
+  float: left;
+  
+}
+
+
+.casillero-nombre-dia{
+  min-height: 25px;
+  max-height: 30px;
+  border-color:black;
+  border-style: solid;
+
+}
+
+.casillero-dia{
+  min-height: 100px;
+  max-height: 105px;
+  border-color:black;
+  border-style: solid;
+
+}
+
+.tabla-casilleros{
+  margin-top: 48px;
+  margin-left: 1.5%;
+  background-color: white;
+}
