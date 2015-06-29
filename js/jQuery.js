@@ -25,7 +25,7 @@ $(document).ready(function() {
     	$('.header').css('opacity', '0.2');
     	
 	});
-
+	
 	$( "#cerrar-dialogo-evento" ).click(function() {
     	$('#dialogo-evento').css('visibility', 'hidden');
     	$('.tabla-casilleros').css('opacity', '1');
