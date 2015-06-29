@@ -1,17 +1,22 @@
 $(document).ready(function() {
 
 	// RENDERIZAR CALENDARIO VACIO CADA VEZ QUE SE CARGA LA PAGINA (ESTATICO)
-	for (var s=1; s<53; s++){
+	for (var s=1; s<52; s++){
 		var id = "semana"+s;
 		$('.tabla-casilleros').append('<div id="'+id+'" class="row"></div>');
 
 		for (var i=1+(s-1)*7; i<8+(s-1)*7; i++){
 		 		var dia = moment().startOf('week').add(i,"days").format("DD");
 		 		if (dia=='01'){
-		 			var month = moment().startOf('week').add(i,"days").format("MMMM");
-		 			dia = '1 ' + month;
+		 			// var month = moment().startOf('week').add(i,"days").format("MMMM");
+		 			dia = '01 ' + moment().startOf('week').add(i,"days").format("MMMM").substring(0, 3) + moment().startOf('week').add(i,"days").format("YY");
 		 		}
-		  		$("#semana"+s).append('<div class="col-xs-2 casillero-dia">'+dia+'</div>');
+		 		if (Number(moment().startOf('week').add(i,"days").format("M")) % 2 == 0)
+		 		{
+		 			$("#semana"+s).append('<div style="background-color:rgba(182, 217, 240, 0.33)" class="col-xs-2 casillero-dia">'+dia+'</div>');
+		 		}
+
+		 		else {$("#semana"+s).append('<div class="col-xs-2 casillero-dia">'+dia+'</div>')};		  		
 		}
 	}
 		
