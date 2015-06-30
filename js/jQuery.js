@@ -57,7 +57,8 @@ function generadordeventos(){
 		var tarea = $('#texto-evento').text();
 		console.log(tarea);
 		$('#texto-evento').html('');
-		
+		$("#"+fechadelevento).append('<h5>Tarea: '+tarea+'</h5>');
+
 
 
 
