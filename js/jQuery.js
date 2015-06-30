@@ -9,18 +9,18 @@ $(document).ready(function() {
 		 		var dia = moment().startOf('week').add(i,"days").format("DD");
 		 		var month = moment().startOf('week').add(i,"days").format("MM");
 		 		var year = moment().startOf('week').add(i,"days").format("YYYY");
-		 		if (dia=='01'){
 
-
-		 			dia = '01 ' + moment().startOf('week').add(i,"days").format("MMMM").substring(0, 3) + moment().startOf('week').add(i,"days").format("YY");
-		 		}
 		 		if (Number(moment().startOf('week').add(i,"days").format("M")) % 2 == 0)
 		 		{
-		 			$("#semana"+s).append('<div id="'+dia+'-'+month+'-'+year+'" class="dia-mes-par col-xs-2 casillero-dia"><h5>'+dia+'</h5></div>');
+		 			if (dia == 01) {$("#semana"+s).append('<div id="'+dia+'-'+month+'-'+year+'" class="dia-mes-par col-xs-2 casillero-dia"><h5>'+dia +" "+ moment().startOf('week').add(i,"days").format("MMMM").substring(0, 3) + moment().startOf('week').add(i,"days").format("YY")+'</h5></div>')}
+		 			else{$("#semana"+s).append('<div id="'+dia+'-'+month+'-'+year+'" class="dia-mes-par col-xs-2 casillero-dia"><h5>'+dia+'</h5></div>');}
 		 		}
 
-		 		else {$("#semana"+s).append('<div id="'+dia+'-'+month+'-'+year+'" class="col-xs-2 casillero-dia"><h5>'+dia+'</h5></div>')
-		 		};		  		
+		 		else
+		 		{
+		 			if (dia == 01) {$("#semana"+s).append('<div id="'+dia+'-'+month+'-'+year+'" class=" col-xs-2 casillero-dia"><h5>'+dia +" "+ moment().startOf('week').add(i,"days").format("MMMM").substring(0, 3) + moment().startOf('week').add(i,"days").format("YY")+'</h5></div>')}
+		 			else{$("#semana"+s).append('<div id="'+dia+'-'+month+'-'+year+'" class="col-xs-2 casillero-dia"><h5>'+dia+'</h5></div>');}
+		 		}		  		
 
 		 			
 		 			
@@ -29,13 +29,17 @@ $(document).ready(function() {
 
 		}
 	}
-		
+	
+function generadordeventos(){
+	 var fechadelevento = "";
 	$( ".casillero-dia" ).click(function() {
   		var $fecha = $(this)[0].id;
+  		fechadelevento = $fecha;
     	$('#fecha-dialogo-evento').html('<h3>Date: '+$fecha+'</h3>');
     	$('#dialogo-evento').css('visibility', 'visible');
     	$('.tabla-casilleros').css('opacity', '0.2');
     	$('.header').css('opacity', '0.2');
+
     	
 	});
 	
@@ -44,6 +48,25 @@ $(document).ready(function() {
     	$('.tabla-casilleros').css('opacity', '1');
     	$('.header').css('opacity', '1');
 	});
+
+	$( "#submit-dialogo-evento" ).click(function() {
+    	$('#dialogo-evento').css('visibility', 'hidden');
+    	$('.tabla-casilleros').css('opacity', '1');
+    	$('.header').css('opacity', '1');
+		console.log(fechadelevento);
+		var tarea = $('#texto-evento').text();
+		console.log(tarea);
+		$('#texto-evento').html('');
+		
+
+
+
+	});
+}	
+	
+
+generadordeventos();
+
 
 
 
