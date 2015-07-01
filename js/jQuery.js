@@ -47,6 +47,7 @@ function generadordeventos(){
     	$('#dialogo-evento').css('visibility', 'hidden');
     	$('.tabla-casilleros').css('opacity', '1');
     	$('.header').css('opacity', '1');
+    	$('#texto-evento').html('');
 	});
 
 	$( "#submit-dialogo-evento" ).click(function() {
@@ -57,7 +58,7 @@ function generadordeventos(){
 		var tarea = $('#texto-evento').text();
 		console.log(tarea);
 		$('#texto-evento').html('');
-		$("#"+fechadelevento).append('<h5>Tarea: '+tarea+'</h5>');
+		$("#"+fechadelevento).append('<h5>'+tarea+'</h5>');
 	});
 }	
 	
